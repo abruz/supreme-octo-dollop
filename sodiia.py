@@ -1,11 +1,10 @@
-#!/etc/bin/python
+#!/usr/bin/python3
 #   ~><< Poorly implemented by Jbies121 >><~
 import string
 from random import shuffle
 def encrypt_sodiia(utup):
     usermessage = utup
     i = 0
-    j = 0
     # Create dictionary to translate user input to cipher text
     # Single substitution will be determined randomly
     sodiia_dictionary = {'a': '', 'b': '', 'c': '', 'd': '', 'e': '', 'f': '', 'g': '', 'h': '', 'i': '', 'j': '', 'k': '', 'l': '', 'm': '', 'n': '', 'o': '', 'p': '', 'q': '', 'r': '', 's': '', 't': '', 'u': '', 'v': '', 'w': '', 'x': '', 'y': '', 'z': '' }
@@ -15,8 +14,7 @@ def encrypt_sodiia(utup):
         for x in sodiia_dictionary:
             sodiia_dictionary[x] = sodiia_shift_alpha[i]
             i+=1
-    sodiia_dictionary[' '] = ' '
-    sodiia_dictionary.update({" ": " ", "'": "'", ",": ",", ".": ".", "?": "?", "!": "!", "@": "@", "#": "#", "$": "$", "%": "%", "^": "^", "&": "&", "*": "*", "(": "(", ")": ")"})
+    sodiia_dictionary.update({" ": " ", "'": "'", ",": ",", ".": ".", "?": "?", "!": "!", "@": "@", "#": "#", "$": "$", "%": "%", "^": "^", "&": "&", "*": "*", "(": "(", ")": ")", "~": "~", "`": "`", "-": "-", "_": "_", "+": "+", "=": "=", "{": "{", "}": "}", "[": "[", "]": "]", ";": ";", ":": ":"})
     for b in usermessage:
         #look up key from usermessage incrementally
         #return result to encrypted_tup
