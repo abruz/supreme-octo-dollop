@@ -1,5 +1,6 @@
 #!/etc/bin/python
 #   ~><< Poorly implemented by Jbies121 >><~
+import string
 from random import shuffle
 def encrypt_sodiia(utup):
     usermessage = utup
@@ -14,6 +15,8 @@ def encrypt_sodiia(utup):
         for x in sodiia_dictionary:
             sodiia_dictionary[x] = sodiia_shift_alpha[i]
             i+=1
+    sodiia_dictionary[' '] = ' '
+    sodiia_dictionary.update({" ": " ", "'": "'", ",": ",", ".": ".", "?": "?", "!": "!", "@": "@", "#": "#", "$": "$", "%": "%", "^": "^", "&": "&", "*": "*", "(": "(", ")": ")"})
     for b in usermessage:
         #look up key from usermessage incrementally
         #return result to encrypted_tup
@@ -26,6 +29,6 @@ def output_sod(etup):
 
 encrypted_list = []
 userInput = input("String to encrypt:: ")
-input_tup = tuple(userInput)
+input_tup = tuple(userInput.lower())
 encrypt_sodiia(input_tup)
 output_sod(encrypted_list)
