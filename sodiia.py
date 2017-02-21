@@ -25,8 +25,27 @@ def output_sod(etup):
     sodiia = ''.join(etup_tostring)
     print("SODIIA:: {}".format(sodiia))
 
+def letter_swap(encrypted_list):
+    swap_list = []
+
+    original = input("Letter to swap: ")
+    if(original == '1'):
+        output_sod(swap_list)
+    else:
+        replacement = input("Swap with: ")
+        for i in encrypted_list:
+            if(i == original):
+                swap_list.append(replacement)
+            else:
+                swap_list.append(i)
+
+        output_sod(swap_list)
+        letter_swap(swap_list)
+
+
 encrypted_list = []
 userInput = input("String to encrypt:: ")
 input_tup = tuple(userInput.lower())
 encrypt_sodiia(input_tup)
 output_sod(encrypted_list)
+letter_swap(encrypted_list)
